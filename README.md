@@ -18,12 +18,12 @@ These scripts are meant to be run by HTCondor, a workflow manager that takes in 
 
 3. Using samtools `samtools 1.13` to perform a alignment file format conversions.
 
-4. Uses `Bakta version 10.0.3` to functionally annotate the reference genomes
+4. Uses `Bakta version 10.0.3` to functionally annotate the reference genomes.
 
 5. Uses `EGGNOG mapper 2.1.12` to annotate the bakta-annotated proteins (`.faa`) into different functional annotations like COG, KEGG, etc.
 
 > [!NOTE]
-> You can run steps 4 and 5 without running steps 1,2,3.
+> You can run steps 4 and 5 without running steps 1, 2, and 3.
 
 # Repository files
 
@@ -71,7 +71,7 @@ ssh [netid]@ap2001.chtc.wisc.edu
 # enter password
 ```
 
-Clone this directory
+Clone this directory:
 ```
 git clone https://github.com/patriciatran/variant-annotation.git
 cd variant-annotation
@@ -87,7 +87,7 @@ chmod +x scripts/*.sh
 To build the software containers, you will need to start an interactive job, build the container, test it, and move it to a location accessible by the working nodes (e.g. staging, not home).
 For detailed instructions, visit https://github.com/UW-Madison-Bacteriology-Bioinformatics/chtc-containers. 
 
-brief instructions:
+Brief instructions:
 ```
 cd recipes
 nano build.sub
@@ -105,7 +105,7 @@ cd ..
 
 ## Run code
 
-Enter the scripts directory, and create 2 metadata tables (comma-separated values)
+Enter the scripts directory, and create 2 metadata tables (comma-separated values).
 The first metadata table (`Samples_and_Ref.txt`) should contain 3 columnes: the sample name, the reference name, and the path to the staging folder containing these files.
 The 2nd metadata table (`references.txt`) should contain 2 columns: the reference name, and the path to the staging folder containing these files.
 
@@ -121,7 +121,7 @@ Submit your htcondor jobs:
 ```
 condor_submit 01_filtlong.sub
 ```
-repeat for 02,03,04 and 05.
+Repeat for 02, 03, 04 and 05.
 
 ## Next steps
 This workflow will create large files. I recommend using Globus.org to transfer files to your ResearchDrive or to your personal endpoint.
@@ -129,12 +129,12 @@ For instructions, please visit: https://chtc.cs.wisc.edu/uw-research-computing/g
 
 ## Importing to Geneious for SNP Identification
 
-If you plan on using this in Geneious to use their SNP identification tool I suggest these steps
-1) Make a folder for each reference
-2) Load the gbff file from bakta - this ensures that you will have the gene annotations
-3) Import the sorted.bam files from Step 03 (samtools output) to the corresponding folders
-4) Use the SNP identification tool, minimum cov 10x and 95% coverage
-5) Once you have the output click on Annotations > Variants, and Columns > Manage Columns. Make sure all columns, including the gene names, are shown in the table. Export to CSV or TSV
+If you plan on using this in Geneious to use their SNP identification tool I suggest these steps:
+1) Make a folder for each reference.
+2) Load the gbff file from bakta - this ensures that you will have the gene annotations.
+3) Import the sorted.bam files from Step 03 (samtools output) to the corresponding folders.
+4) Use the SNP identification tool, minimum cov 10x and 95% coverage.
+5) Once you have the output click on Annotations > Variants, and Columns > Manage Columns. Make sure all columns, including the gene names, are shown in the table. Export to CSV or TSV.
 6) Use Python or R or process all the tables.
 
 ## References
