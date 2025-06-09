@@ -138,17 +138,13 @@ If you plan on using this in Geneious to use their SNP identification tool I sug
 6) Use Python or R or process all the tables.
 
 ## References
+If you find this pipeline helpful, please cite this GitHub Repository:
+1. Tran, P. Q. (2025). variant-annotation (Version ???) \[Computer software\]. https://github.com/UW-Madison-Bacteriology-Bioinformatics/variant-annotation/
+This workflow relies on the following softwares:
 This pipeline uses the following tools:
 
-- Filtlong: https://github.com/rrwick/Filtlong
-- Minimap: https://github.com/lh3/minimap2
-- Samtools: https://www.htslib.org/download/
-- Bakta: https://github.com/oschwengers/bakta
-- Eggnog-mapper: https://github.com/eggnogdb/eggnog-mapper
-
-## Citation
-If you find this pipeline helpful, please consider citing this repository.
-
-
-
-
+1. Filtlong: https://github.com/rrwick/Filtlong
+2. Minimap: https://github.com/lh3/minimap2
+3. Samtools: https://www.htslib.org/download/
+4. Bakta: https://github.com/oschwengers/bakta
+5. Eggnog-mapper: https://github.com/eggnogdb/eggnog-mapper
