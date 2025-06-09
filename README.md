@@ -1,7 +1,6 @@
 # Long-read Variant Calling Annotation pipeline
 
 # Purpose
-TESTING FORK
 The goal of this pipeline is to perform variant calling on long-read (e.g. Oxford Nanopore ONT technologies) sequencing data against a reference bacterial genome of interests. The program generated multiple alignment files in the .SAM and .BAM format. Additionally, it includes two steps to functionally annotate the bacterial genomes using multiple reference genome databases. This can help match in which genes the variants tends to occur.
 
 # Cyberinfrastructure & Implementation
@@ -12,9 +11,9 @@ These scripts are meant to be run by HTCondor, a workflow manager that takes in 
 
 ![Workflow design](https://github.com/UW-Madison-Bacteriology-Bioinformatics/variant-annotation/blob/main/workflow.png)
 
-1. Filters using `Filtlong v0.2.1`, keeping 95% of best reads with the flag `-p 95`
+1. Filters using `Filtlong v0.2.1`, keeping 95% of best reads with the flag `-p 95`.
 
-2. Maps the filtered data to reference genomes using `minimap2 2.22-r1101`, a mapper for long-read sequences. It uses the flag `-x map-ont`
+2. Maps the filtered data to reference genomes using `minimap2 2.22-r1101`, a mapper for long-read sequences. It uses the flag `-x map-ont`.
 
 3. Using samtools `samtools 1.13` to perform a alignment file format conversions.
 
@@ -106,7 +105,7 @@ cd ..
 ## Run code
 
 Enter the scripts directory, and create 2 metadata tables (comma-separated values).
-The first metadata table (`Samples_and_Ref.txt`) should contain 3 columnes: the sample name, the reference name, and the path to the staging folder containing these files.
+The first metadata table (`Samples_and_Ref.txt`) should contain 3 columns: the sample name, the reference name, and the path to the staging folder containing these files.
 The 2nd metadata table (`references.txt`) should contain 2 columns: the reference name, and the path to the staging folder containing these files.
 
 ```
@@ -143,12 +142,11 @@ If you find this pipeline helpful, please cite this GitHub Repository:
 
 This workflow relies on the following softwares, please cite them as well:
 
-1. Filtlong: Wick, R. (2017). *Filtlong* [Computer software]. https://github.com/rrwick/Filtlong, og link: https://github.com/rrwick/Filtlong
+1. Filtlong: Wick, R. (2017). *Filtlong* [Computer software]. https://github.com/rrwick/Filtlong
 2. Minimap: Li, H. (2018). *Minimap2: pairwise alignment for nucleotide sequences*. Bioinformatics, 34(18), 3094–3100. https://doi.org/10.1093/bioinformatics/bty191
-, og link: https://github.com/lh3/minimap2
-3. Samtools: Li, H., Handsaker, B., Wysoker, A., et al. (2009). *The Sequence Alignment/Map format and SAMtools*. Bioinformatics, 25(16), 2078–2079. https://doi.org/10.1093/bioinformatics/btp352, og link: https://www.htslib.org/download/
-4. Bakta: Schwengers O, Jelonek L, Alfred D, Goesmann A (2021) *Bakta: rapid and standardized annotation of bacterial genomes via alignment-free sequence identification.* Microbial Genomics, 7(11). https://doi.org/10.1099/mgen.0.000685, og link: https://github.com/oschwengers/bakta
-5. Eggnog-mapper: Cantalapiedra CP, Hernández-Plaza A, Letunic I, Bork P, Huerta-Cepas J. (2021). *eggNOG-mapper v2: Functional Annotation, Orthology Assignments, and Domain Prediction at the Metagenomic Scale.* Mol Biol Evol, 38(12):5825–5829. https://doi.org/10.1093/molbev/msab293, og link: https://github.com/eggnogdb/eggnog-mapper
+3. Samtools: Li, H., Handsaker, B., Wysoker, A., et al. (2009). *The Sequence Alignment/Map format and SAMtools*. Bioinformatics, 25(16), 2078–2079. https://doi.org/10.1093/bioinformatics/btp352
+4. Bakta: Schwengers O, Jelonek L, Alfred D, Goesmann A (2021) *Bakta: rapid and standardized annotation of bacterial genomes via alignment-free sequence identification.* Microbial Genomics, 7(11). https://doi.org/10.1099/mgen.0.000685
+5. Eggnog-mapper: Cantalapiedra CP, Hernández-Plaza A, Letunic I, Bork P, Huerta-Cepas J. (2021). *eggNOG-mapper v2: Functional Annotation, Orthology Assignments, and Domain Prediction at the Metagenomic Scale.* Mol Biol Evol, 38(12):5825–5829. https://doi.org/10.1093/molbev/msab293
 
 ## Help and additional information:
 Patricia Q. Tran, ptran5@wisc.edu, University of Wisconsin-Madison Get Help:
